@@ -2,13 +2,14 @@
 # Sistema de Registro de Consultas Médicas
 
 ## Objetivo
-Este projeto foi desenvolvido com o objetivo de criar um sistema eficiente para o registro de consultas médicas. Ele permite a gestão de médicos, pacientes, e proporciona uma visão geral através de um dashboard intuitivo, além de oferecer controle de acessos para diferentes níveis de usuários.
+Este projeto foi desenvolvido com o objetivo de criar um sistema eficiente para o registro de consultas médicas. Ele permite a gestão de médicos, pacientes, e proporciona uma visão geral através de um dashboard intuitivo, além de oferecer controle de acessos para diferentes níveis de utilizadores.
 
 ## Recursos Principais
-- **Registro de Médicos**: Cadastro e gerenciamento de informações dos médicos.
-- **Registro de Pacientes**: Cadastro e gerenciamento de informações dos pacientes.
+- **Registro de Médicos**: Registo e gerenciamento de informações dos médicos.
+- **Registro de Pacientes**: Registo e gerenciamento de informações dos pacientes.
 - **Dashboard**: Visualização consolidada das consultas, permitindo um acesso rápido às informações mais relevantes.
-- **Controle de Acessos**: Sistema de controle para gerenciar o acesso de diferentes tipos de usuários às funcionalidades do sistema.
+- **Controle de Acessos**: Sistema de controle para gestão o acesso de diferentes tipos de usuários às funcionalidades do sistema.
+- **Temas dark e light** : Este projecto possibilita a alteração do tema de dark para light em função da preferênccia do utlizador.
 
 ## Tecnologias Utilizadas
 - **Blazor**: Framework da Microsoft para construção de interfaces ricas em C# e HTML.
