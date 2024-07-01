@@ -1,0 +1,69 @@
+﻿@page "/medicos/update/{MedicoId:int?}"
+@using Microsoft.AspNetCore.Authorization
+@inherits UpdateMedicoPage
+
+@attribute [Authorize(Roles = "Atendente")]
+<MudText Typo="Typo.h3">Alterando Médico</MudText>
+<MudPaper Class="pa-8 mt-4">
+
+    <EditForm Model="@InputModel" OnValidSubmit="OnValidSubmitAsync">
+        <DataAnnotationsValidator />
+
+        <MudTextField Label="Nome"
+                      Variant="Variant.Outlined"
+                      HelperText="Campo obrigatorio"
+                      @bind-Value="InputModel.Nome"
+                      For="@(()=> InputModel.Nome)" />
+
+        <MudTextField Label="Documento"
+                      Variant="Variant.Outlined"
+                      HelperText="Campo obrigatorio"
+                      @bind-Value="InputModel.Documento"
+                      Mask="@(new PatternMask("000000000000a"))"
+                      For="@(()=> InputModel.Documento)" />
+
+        <MudTextField Label="Email"
+                      Variant="Variant.Outlined"
+                      HelperText="Campo obrigatorio"
+                      @bind-Value="InputModel.Email"
+                      For="@(()=> InputModel.Email)" />
+
+        <MudTextField Label="CRM"
+                      Variant="Variant.Outlined"
+                      HelperText="Campo obrigatorio"
+                      @bind-Value="InputModel.CRM"
+                      For="@(()=> InputModel.CRM)" />
+
+        <MudSelect Label="Especialidade"
+                   @bind-Value="InputModel.EspecialidadeId"
+                   Variant="Variant.Outlined"
+                   AnchorOrigin="Origin.BottomCenter"
+                   For="@(()=> InputModel.EspecialidadeId)">
+                    @foreach (var especialidade in Especialidades)
+                    {
+                        <MudSelectItem Value="@especialidade.Id">@especialidade.Nome</MudSelectItem>
+                    }
+        </MudSelect>
+
+        <MudTextField Label="Celular"
+                      Variant="Variant.Outlined"
+                      HelperText="Campo obrigatorio"
+                      @bind-Value="InputModel.Celular"
+                      Mask="@(new PatternMask("(00)000000000"))"
+                      For="@(()=> InputModel.Celular)" />
+
+        <MudDatePicker Label="Data de Registo"
+                       Variant="Variant.Outlined"
+                       @bind-Date="DataCadastro"
+                       Placeholder="Data de nascimento"
+                       DateFormat="dd/MM/yyyy" />
+
+        <MudDivider Class="m-4" />
+
+        <MudButton Variant="Variant.Filled"
+                   StartIcon="@Icons.Material.Filled.Save"
+                   Color="Color.Info"
+                   Size="Size.Large"
+                   ButtonType="ButtonType.Submit">Salvar</MudButton>
+    </EditForm>
+</MudPaper>

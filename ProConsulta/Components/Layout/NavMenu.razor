@@ -1,0 +1,25 @@
+﻿<MudNavMenu>
+    <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
+	<MudDivider></MudDivider>
+
+	<MudNavLink Href="pacientes" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.People">Pacientes</MudNavLink>
+	<MudNavLink Href="medicos" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Person4">Médicos</MudNavLink>
+	<MudNavLink Href="especialidades" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.ViewList">Especialidade</MudNavLink>
+	<MudNavLink Href="agendamentos" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.CalendarMonth">Agendamentos</MudNavLink>
+
+
+	<MudDivider></MudDivider>
+
+	<MudNavLink Href="auth" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">Auth Required</MudNavLink>
+
+	<AuthorizeView>
+		<Authorized>
+			<MudNavLink Href="Account/Manage" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">@context.User.Identity?.Name</MudNavLink>
+		</Authorized>
+		<NotAuthorized>
+			<MudNavLink Href="Account/Register" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">Register</MudNavLink>
+			<MudNavLink Href="Account/Login" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">Login</MudNavLink>
+		</NotAuthorized>
+	</AuthorizeView>
+
+</MudNavMenu>

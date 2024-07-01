@@ -1,0 +1,41 @@
+﻿@page "/pacientes"
+
+@inherits IndexPage
+
+<MudText Typo="Typo.h3">Pacientes</MudText> 
+
+<MudButton 
+        Variant="Variant.Filled" 
+        StartIcon="@Icons.Material.Filled.Add"
+        Color="Color.Info"
+        Size="Size.Small"
+        Href="/pacientes/create"
+        Class="mt-md4 mb-4">Novo Paciente</MudButton>
+
+<MudDataGrid Items="@Pacientes" PageSize="10" SortMode="@SortMode.Single" Groupable="false" >
+    <Columns>
+        <PropertyColumn Property="z=>z.Nome" Title="Nome" Sortable="true" Filterable="true" />
+        <PropertyColumn Property="z=>z.Documento" Title="Documento" Sortable="true" Filterable="true" />
+        <PropertyColumn Property="z=>z.Email" Title="Email" Sortable="true" Filterable="true" />
+        <PropertyColumn Property="z=>z.Celular" Title="Celular" Sortable="true" Filterable="true" />
+        <PropertyColumn Property="z=>z.DataNascimento" Format="dd/MM/yyyy" Title="DataNascimento" Sortable="true" Filterable="true" />
+        <TemplateColumn>
+            <CellTemplate>
+                <MudStack row>
+                    <MudFab Size="Size.Small"  
+                            Label="Editar" 
+                            hidden="@HideButtons"
+                            @onclick="@(()=>GoToUpdate(context.Item.Id))" 
+                            StartIcon="@Icons.Material.Filled.Edit"
+                            Color="Color.Success"></MudFab>
+                    <MudFab Size="Size.Small"  
+                            Label="Apagar" 
+                            hidden="@HideButtons"
+                            @onclick="@(()=>DeletePaciente(context.Item))" 
+                            StartIcon="@Icons.Material.Filled.Delete"
+                            Color="Color.Error"></MudFab>
+                </MudStack>
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+</MudDataGrid> 
