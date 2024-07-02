@@ -1,7 +1,7 @@
 
 # Sistema de Registro de Consultas Médicas
 
-## Objetivo
+## Objectivo
 Este projecto foi desenvolvido com o objectivo de criar um sistema eficiente para o registro de consultas médicas. Ele permite a gestão de médicos, pacientes, e proporciona uma visão geral através de um dashboard intuitivo, além de oferecer controle de acessos para diferentes níveis de utilizadores.
 
 ## Recursos Principais
